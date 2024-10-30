@@ -83,15 +83,14 @@ async function loadCharacters(url) { //função vai receber a url da próxima p�
                 
             });
 
-            const nextButton = document.getElementById('next-button') //Pelo escopo de local tem que repetir essa merda
+            const nextButton = document.getElementById('next-button') 
             const backButton = document.getElementById('back-button')
 
             nextButton.addEventListener('click', loadNextPage) 
             backButton.addEventListener('click', loadPreviousPage)
 
             nextButton.disabled = !responseJson.next //disable pode ser true ou false, ele vai estar true/desabilitado 
-            //quando o responseJason.next for falso, ou seja, enquanro a api tiver next ele vai ta habilitado
-            //quando acabar os personagens ou não tiver mais next, o response vai ser falso
+            
             
             backButton.disabled = !responseJson.previous 
 
@@ -113,7 +112,7 @@ async function loadNextPage() {
         const responseJson = await response.json() //pega a response e passa pra json e guarda na const responseJson
 
         await loadCharacters(responseJson.next) // Quando apertamos o botão de next a função ladNextPag faz a requisição pra api pra obter a url da proxima página que ta armazenado na currentPag
-        //o Next é da propria api, responseJson é a requisição
+        
         //a nova url vai pra função loadCharacters e carregar os cards
         //depois de carregar a url vai mudar para a pagina dois, então a url da variável do começo muda
 
