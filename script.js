@@ -78,9 +78,7 @@ async function loadCharacters(url) { //função vai receber a url da próxima p�
                     modalContent.appendChild(eyeColor)
                     modalContent.appendChild(birthYear)
                 }
-
-                mainContent.appendChild(card)
-                
+                mainContent.appendChild(card) 
             });
 
             const nextButton = document.getElementById('next-button') 
